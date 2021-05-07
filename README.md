@@ -38,4 +38,4 @@
 ### 역할 분담
 - Owner : 전소명
 - Collaborator : 김태민
-- Developer : 김태민, 
+- Developer : 김태민, 전소명
