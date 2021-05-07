@@ -5,7 +5,7 @@
 
 ---
 ### 협업 도구
-- Messaging: Kakao Talk
+- Messaging: Kakao Talk, Issues
 - Code sharing: Github
 
 ### 개발 환경 및 언어
