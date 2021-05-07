@@ -32,3 +32,7 @@ void readPeople(People p);  // 하나의 제품 출력 함수
 // int loadFile(People **p, int *count, int *index); // 파일에서 불러오기
 
 int selectMenu();
+
+void printtier(int tier);
+void printwork(int work);
+void printbohum(int bohym);
