@@ -22,8 +22,7 @@ int selectMenu()
   return menu;
 }
 
-int addPeople(People *p)
-{ // 제품을 추가하는 함수 2
+int addPeople(People *p) {  // 제품을 추가하는 함수 
   printf("새 인부의 이름은? \n>> ");
   scanf(" %[^\n]", p->name);
   printf("새 인부의 직급은(0:사장,1:과장,2:부장,3:말단,4:인턴,5:알바)? \n>> ");
@@ -41,8 +40,12 @@ void readPeople(People p)
   printbohum(p.bohum);
 }
 
+<<<<<<< HEAD
 void printList(int count, People **p)
 { // 전체 등록된 제품 리스트 출력 1
+=======
+void printList(int count, People **p) {  // 전체 등록된 제품 리스트 출력 
+>>>>>>> 9f4e31485fae42206ed33b8d83f3dfc94966c7c2
   int i = 0;
   printf("번호 이름  직급 출결   보험  \n");
   for (i = 0; i < count; i++)
@@ -126,8 +129,12 @@ void printbohum(int bohym)
   }
 }
 
+<<<<<<< HEAD
 int changePeople(People *p)
 { //제품 수정 3
+=======
+int changePeople(People *p) {
+>>>>>>> 9f4e31485fae42206ed33b8d83f3dfc94966c7c2
   printf("새 인부 이름은?\n>> ");
   scanf(" %[^\n]", p->name);
   printf("새 인부의 출퇴근 현황은?(1:출근,2:퇴근,3:야근,4:조퇴)\n>> ");
@@ -150,8 +157,12 @@ int insuranceManage(People *p)
   return 1;
 }
 
+<<<<<<< HEAD
 int deletePeople(People **p, int count)
 { // 제품 삭제 4
+=======
+int deletePeople(People **p, int count) { 
+>>>>>>> 9f4e31485fae42206ed33b8d83f3dfc94966c7c2
   int deleteok, no;
   printList(count, p);
   printf("삭제할 인부의 번호를 선택하시오.\n>> ");
@@ -164,6 +175,7 @@ int deletePeople(People **p, int count)
   count--;
   return count;
 }
+<<<<<<< HEAD
 void selectSearch(People **p, int index)
 {
   int input;
@@ -284,3 +296,32 @@ int saveToFile(People **p, int index)
   fclose(fp);
   return 1;
 }
+=======
+int loadFile(People **p, int *count, int *index)
+{ // 파일에서 불러오기
+   int i =0;
+   FILE *fp = fopen("People.txt","r");
+   if(fp==NULL) return 0;
+   while(!feof(fp)){
+      p[*index] = (People *)malloc(sizeof(People));
+      if(fscanf(fp," %d %d %d %[^\n]",&p[*index]->work,&p[*index]->tier,&p[*index]->bohum,p[*index]->name)== EOF) break;
+      *count +=1;
+      *index +=1;
+   }
+   fclose(fp);
+   return 1;
+}
+
+int saveToFile(People **p, int index)
+{ // 파일에 저장 
+   FILE *fp = fopen("People.txt", "w");
+   for (int i = 0; i < index; i++)
+   {
+      if (p[i] == NULL)
+         continue;
+      fprintf(fp," %d %d %d %s\n",p[i]->work,p[i]->tier,p[i]->bohum,p[i]->name);
+   }
+   fclose(fp);
+   return 1;
+}
+>>>>>>> 9f4e31485fae42206ed33b8d83f3dfc94966c7c2
