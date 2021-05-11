@@ -22,7 +22,8 @@ int selectMenu()
   return menu;
 }
 
-int addPeople(People *p) {  // 제품을 추가하는 함수 
+int addPeople(People *p)
+{ // 제품을 추가하는 함수 2
   printf("새 인부의 이름은? \n>> ");
   scanf(" %[^\n]", p->name);
   printf("새 인부의 직급은(0:사장,1:과장,2:부장,3:말단,4:인턴,5:알바)? \n>> ");
@@ -40,7 +41,8 @@ void readPeople(People p)
   printbohum(p.bohum);
 }
 
-void printList(int count, People **p) {  // 전체 등록된 제품 리스트 출력 
+void printList(int count, People **p)
+{ // 전체 등록된 제품 리스트 출력 1
   int i = 0;
   printf("번호 이름  직급 출결   보험  \n");
   for (i = 0; i < count; i++)
@@ -148,8 +150,8 @@ int insuranceManage(People *p)
   return 1;
 }
 
-int deletePeople(People **p, int count) { 
-
+int deletePeople(People **p, int count)
+{ // 제품 삭제 4
   int deleteok, no;
   printList(count, p);
   printf("삭제할 인부의 번호를 선택하시오.\n>> ");
@@ -162,7 +164,6 @@ int deletePeople(People **p, int count) {
   count--;
   return count;
 }
-<<<<<<< HEAD
 void selectSearch(People **p, int index)
 {
   int input;
