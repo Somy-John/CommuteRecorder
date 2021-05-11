@@ -125,7 +125,7 @@ int deletePeople(People **p, int count) {  // 제품 삭제 4
 }
 void selectSearch(People **p, int index){
   int input;
-  printf("검색 방법을 선택해 주십시오(1:이름 2:지급 3:출결 0:종료)\n>> ");
+  printf("검색 방법을 선택해 주십시오(1:이름 2:직급 3:출결 0:종료)\n>> ");
   scanf("%d",&input);
   if(input==1){
     search_name(p,index);

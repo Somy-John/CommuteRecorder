@@ -29,7 +29,7 @@ int saveToFile(People **p, int index); // 파일에 저장 8
 
 void readPeople(People p);  // 하나의 제품 출력 함수
 
-// int loadFile(People **p, int *count, int *index); // 파일에서 불러오기
+int loadFile(People **p, int *count, int *index); // 파일에서 불러오기
 
 int selectMenu();
 
