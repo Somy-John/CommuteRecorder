@@ -123,3 +123,46 @@ int deletePeople(People **p, int count) {  // 제품 삭제 4
   count--;
   return count;
 }
+void selectSearch(People **p, int index){
+  int input;
+  printf("검색 방법을 선택해 주십시오(1:이름 2:지급 3:출결 0:종료)\n>> ");
+  scanf("%d",&input);
+  if(input==1){
+    search_name(p,index);
+  }
+  if(input==2){
+    search_tier(p,index);
+  }
+  if(input==3){
+    search_attand(p,index);
+  }
+  if(input==0){
+    printf("검색이 종료되었습니다. ");
+  }
+}
+
+void search_name(People **p, int index){
+  int count=0;
+  char input[20];
+  printf("검색할 이름은? \n>> ");
+  scanf("%s",input);
+  for(int i =0; i <index ; i++){
+    if(p[i]->tier == -1) continue;
+    if(strstr(p[i]->name,input)){
+      printf("%2d ", i+1);
+      readPeople(*p[i]);
+      printf("\n");
+      count++;
+ }
+ }
+if(count == 0) printf("=> 검색된 데이터 없음!");
+ printf("\n");
+}
+
+void search_tier(People **p, int index){
+  
+}
+
+void search_attand(People **p, int index){
+
+}
