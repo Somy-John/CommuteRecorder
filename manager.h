@@ -17,7 +17,7 @@ int manage_attend(People *p);  //출결 관리 (출근, 퇴근, 야근, 조퇴) 
 
 int insuranceManage(People *p);  //보험 관리 6
 
-void selectSearch(); // 검색 선택 7
+void selectSearch(People **p, int index); // 검색 선택 7
 
 void search_name(People **p, int index); //이름 검색 7 - 1
 
