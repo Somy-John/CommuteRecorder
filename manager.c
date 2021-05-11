@@ -212,6 +212,23 @@ void search_name(People **p, int index)
 
 void search_tier(People **p, int index)
 {
+  int count = 0;
+  int input;
+  printf("검색할 직급은? (0:사장,1:과장,2:부장,3:말단,4:인턴,5:알바)\n>> ");
+  scanf(" %d", &input);
+  for (int i = 0; i < index; i++)
+  {
+    if (p[i]->bohum == -1)
+      continue;
+    if (p[i]->tier == input)
+    {
+      printf("%2d ", i + 1);
+      readPeople(*p[i]);
+      count++;
+    }
+  }
+  if (count == 0)
+    printf("=> 검색된 데이터 없음!\n");
 }
 
 void search_attand(People **p, int index)
