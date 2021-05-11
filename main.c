@@ -46,13 +46,13 @@ int main(void) {
         if (insuranceManage(p[no - 1])) printf("보험처리 성공\n");
       }
     }
-    // else if (menu == 7)
-    //    selectSearch();
-    // else if (menu == 8)
-    // {
-    //    if (saveToFile(p, index))
-    //       printf("저장됨!\n");
-    // }
+    else if (menu == 7)
+      selectSearch(p,index);
+     else if (menu == 8)
+    {
+       if (saveToFile(p, index))
+          printf("저장됨!\n");
+    }
   }
   printf("종료됨 ... \n");
   return 0;

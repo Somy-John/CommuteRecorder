@@ -154,6 +154,7 @@ void search_name(People **p, int index){
       printf("\n");
       count++;
  }
+
  }
 if(count == 0) printf("=> 검색된 데이터 없음!");
  printf("\n");
@@ -165,4 +166,32 @@ void search_tier(People **p, int index){
 
 void search_attand(People **p, int index){
 
+}
+
+int loadFile(People **p, int *count, int *index)
+{ // 파일에서 불러오기
+   int i =0;
+   FILE *fp = fopen("People.txt","r");
+   if(fp==NULL) return 0;
+   while(!feof(fp)){
+      p[*index] = (People *)malloc(sizeof(People));
+      if(fscanf(fp," %d %d %d %[^\n]",&p[*index]->work,&p[*index]->tier,&p[*index]->bohum,p[*index]->name)== EOF) break;
+      *count +=1;
+      *index +=1;
+   }
+   fclose(fp);
+   return 1;
+}
+
+int saveToFile(People **p, int index)
+{ // 파일에 저장 
+   FILE *fp = fopen("People.txt", "w");
+   for (int i = 0; i < index; i++)
+   {
+      if (p[i] == NULL)
+         continue;
+      fprintf(fp," %d %d %d %s\n",p[i]->work,p[i]->tier,p[i]->bohum,p[i]->name);
+   }
+   fclose(fp);
+   return 1;
 }
