@@ -8,8 +8,8 @@ int main(void) {
   People *p[100];
   int count = 0, index = 0, menu;
 
-  // if (loadFile(p, &count, &index) == 1)  printf("=> 로딩 성공!\n");
-  // else  printf("=> 파일 없음\n");
+  if (loadFile(p, &count, &index) == 1)  printf("=> 로딩 성공!\n");
+  else  printf("=> 파일 없음\n");
 
   while (1) {
     menu = selectMenu();
@@ -48,11 +48,11 @@ int main(void) {
     }
     // else if (menu == 7)
     //    selectSearch();
-    // else if (menu == 8)
-    // {
-    //    if (saveToFile(p, index))
-    //       printf("저장됨!\n");
-    // }
+    else if (menu == 8)
+    {
+       if (saveToFile(p, index))
+          printf("저장됨!\n");
+    }
   }
   printf("종료됨 ... \n");
   return 0;
