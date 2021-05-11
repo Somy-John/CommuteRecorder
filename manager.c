@@ -123,3 +123,29 @@ int deletePeople(People **p, int count) {  // 제품 삭제 4
   count--;
   return count;
 }
+int loadFile(People **p, int *count, int *index)
+{ // 파일에서 불러오기
+   FILE *fp = fopen("People.txt","r");
+   if(fp==NULL) return 0;
+   while(!feof(fp)){
+      p[*index] = (People *)malloc(sizeof(People));
+      if(fscanf(fp," %d %d %d %[^\n]",&p[i]->work,&p[i]->tier,&p[i]->bohum,p[i]->name)== EOF) break;
+      *count +=1;
+      *index +=1;
+   }
+   fclose(fp);
+   return 1;
+}
+
+int saveToFile(People **p, int index)
+{ // 파일에 저장 5
+   FILE *fp = fopen("People.txt", "w");
+   for (int i = 0; i < index; i++)
+   {
+      if (p[i] == NULL)
+         continue;
+      fprintf(fp," %d %d %d %s",p[i]->work,p[i]->tier,p[i]->bohum,p[i]->name);
+   }
+   fclose(fp);
+   return 1;
+}
