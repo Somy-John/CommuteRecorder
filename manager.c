@@ -235,7 +235,7 @@ void search_attand(People **p, int index)
 {
   int count = 0;
   int input;
-  printf("검색할 출결 현황은? \n>> ");
+  printf("검색할 출결 현황은(1:출근,2:퇴근,3:야근,4:조퇴)? \n>> ");
   scanf(" %d", &input);
   for (int i = 0; i < index; i++)
   {
